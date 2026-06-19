@@ -1,6 +1,9 @@
 # Use the official Alpine image as a base
 FROM node:20-alpine
 
+RUN apk update && apk add --no-cache --upgrade libcrypto3
+RUN apk update && apk add --no-cache --upgrade libssl3
+
 # Set the working directory in the container
 WORKDIR /usr/src/app
 
